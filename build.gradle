@@ -23,6 +23,7 @@ dependencies {
         api('com.exactpro.th2:th2-common:1.4.2')
         api('com.exactpro.th2:th2-sailfish-utils:1.3.0')
         api('com.exactpro.th2:th2-verifier:1.3.1')
+        api('com.exactpro.th2:th2-store-common:1.4.0')
 
         api("com.exactpro.cradle:cradle-cassandra:${cradleVersion}")
         api("com.exactpro.cradle:cradle-core:${cradleVersion}")
