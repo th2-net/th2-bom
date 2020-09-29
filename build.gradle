@@ -36,7 +36,7 @@ dependencies {
 //        api('com.exactpro.th2:th2-grpc-verifier:1.1-SNAPSHOT')
 //        api('com.exactpro.th2:th2-grpc-simulator:1.4.1')
 //
-        api('com.exactpro.th2:th2-store-common:1.4.2-schema.+')
+        api('com.exactpro.th2:th2-store-common:1.4.1-schema.+')
 //        api('com.exactpro.th2:th2-grpc-event-store:1.4.2-schema.+')
 //        api('com.exactpro.th2:th2-grpc-connectivity:1.2.1-schema.+')
     }
