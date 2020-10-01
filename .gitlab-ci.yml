@@ -2,11 +2,11 @@ variables:
   APP_NAME: "th2-bom"
   MAJOR_VERSION: "1"
   MINOR_VERSION: "1"
-  MAINTENANCE_VERSION: '0'
+  MAINTENANCE_VERSION: '1'
   DOCKER_PUBLISH_ENABLED: 'false'
   ARTIFACTORY_PUBLISH_ENABLED: 'true'
 
 include:
   - project: 'vivarium/th2/pipelines'
-    ref: th2-755
+    ref: master
     file: '/.gitlab-ci-java.yml'
