@@ -34,7 +34,7 @@ dependencies {
         api("org.slf4j:slf4j-log4j12:${slf4jVersion}")
 
         // gRPC libraries
-        api('com.exactpro.th2:grpc-common:2.0.1')
+        api('com.exactpro.th2:grpc-common:2.0.2')
         api('com.exactpro.th2:grpc-act-fix:2.0.0')
         api('com.exactpro.th2:grpc-util:2.0.0')
         api('com.exactpro.th2:grpc-check1:2.0.0')
