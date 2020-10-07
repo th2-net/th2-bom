@@ -47,7 +47,7 @@ dependencies {
         api('com.exactpro.th2:grpc-util:2.0.0')
         api('com.exactpro.th2:grpc-check1:2.0.0')
         api('com.exactpro.th2:grpc-sim:2.0.0')
-        api('com.exactpro.th2:grpc-estore:2.0.4')
+        api('com.exactpro.th2:grpc-estore:2.0.11')
         api('com.exactpro.th2:grpc-conn:2.0.0')
     }
 }
