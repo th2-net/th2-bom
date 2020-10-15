@@ -29,6 +29,8 @@ dependencies {
         api('com.exactpro.th2:check2:2.0.0')
         api('com.exactpro.th2:store-common:2.2.0')
 
+        api("com.rabbitmq:amqp-client:5.8.0")
+
         api("com.exactpro.cradle:cradle-cassandra:${cradleVersion}")
         api("com.exactpro.cradle:cradle-core:${cradleVersion}")
 
