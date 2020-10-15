@@ -11,6 +11,7 @@ ext {
 
     slf4jVersion        = '1.7.30'
     grpcVersion         = '1.32.1'
+    jacksonVersion      = '2.11.2'
 }
 
 group = 'com.exactpro.th2'
@@ -33,6 +34,13 @@ dependencies {
 
         api("com.exactpro.cradle:cradle-cassandra:${cradleVersion}")
         api("com.exactpro.cradle:cradle-core:${cradleVersion}")
+
+        api("com.fasterxml.jackson.core:jackson-core:${jacksonVersion}")
+        api("com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}")
+        api("com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}")
+        api("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}")
+        api("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:${jacksonVersion}")
+        api("com.fasterxml.jackson.module:jackson-module-kotlin:${jacksonVersion}")
 
         api('com.google.protobuf:protobuf-java-util:3.13.0')
         api("io.grpc:grpc-protobuf:${grpcVersion}")
