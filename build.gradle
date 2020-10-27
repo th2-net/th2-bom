@@ -27,7 +27,7 @@ dependencies {
         api('com.exactpro.th2:common:2.1.0')
         api('com.exactpro.th2:sailfish-utils:2.0.4')
         api('com.exactpro.th2:check1:2.0.1')
-        api('com.exactpro.th2:check2:2.0.0')
+        api('com.exactpro.th2:check2:2.0.1')
         api('com.exactpro.th2:store-common:2.2.0')
 
         api("com.rabbitmq:amqp-client:5.8.0")
