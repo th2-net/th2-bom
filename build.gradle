@@ -7,7 +7,7 @@ plugins {
 ext {
     sharedDir           = file('shared')
 
-    cradleVersion       = '1.5.2'
+    cradleVersion       = '1.7.0'
 
     slf4jVersion        = '1.7.30'
     grpcVersion         = '1.32.1'
@@ -31,7 +31,7 @@ dependencies {
         api('com.exactpro.th2:check2:2.0.1')
         api('com.exactpro.th2:store-common:2.2.0')
 
-        api("com.rabbitmq:amqp-client:5.8.0")
+        api("com.rabbitmq:amqp-client:5.9.0")
         api("com.datastax.cassandra:cassandra-driver-core:3.6.0")
 
         api("com.exactpro.cradle:cradle-cassandra:${cradleVersion}")
