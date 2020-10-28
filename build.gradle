@@ -50,10 +50,12 @@ dependencies {
         api("com.google.guava:guava:29.0-jre")
 
         api('com.google.protobuf:protobuf-java-util:3.13.0')
+        api('com.google.protobuf:protoc')
         api("io.grpc:grpc-protobuf:${grpcVersion}")
         api("io.grpc:grpc-stub:${grpcVersion}")
         api("io.grpc:grpc-core:${grpcVersion}")
         api("io.grpc:grpc-netty:${grpcVersion}")
+        api("io.grpc:protoc-gen-grpc-java")
 
         api("org.slf4j:slf4j-api:${slf4jVersion}")
         api("org.slf4j:slf4j-log4j12:${slf4jVersion}")
