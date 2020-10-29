@@ -13,6 +13,7 @@ ext {
     grpcVersion         = '1.32.1'
     protobufVersion     = '3.13.0'
     jacksonVersion      = '2.11.2'
+    prometheusVersion   = '0.9.0'
 }
 
 group = 'com.exactpro.th2'
@@ -60,6 +61,11 @@ dependencies {
 
         api("org.slf4j:slf4j-api:${slf4jVersion}")
         api("org.slf4j:slf4j-log4j12:${slf4jVersion}")
+
+        // Prometheus FIXME: remove when we have a facade in common
+        api("io.prometheus:simpleclient:${prometheusVersion}")
+        api("io.prometheus:simpleclient_hotspot:${prometheusVersion}")
+        api("io.prometheus:simpleclient_httpserver:${prometheusVersion}")
 
         // gRPC libraries
         api('com.exactpro.th2:grpc-service-generator:2.0.1')
