@@ -68,7 +68,7 @@ dependencies {
         api("io.prometheus:simpleclient_httpserver:${prometheusVersion}")
 
         // gRPC libraries
-        api('com.exactpro.th2:grpc-service-generator:2.0.1')
+        api('com.exactpro.th2:grpc-service-generator:2.0.2')
 
         api('com.exactpro.th2:grpc-common:2.1.5')
         api('com.exactpro.th2:grpc-act-fix:2.0.4')
