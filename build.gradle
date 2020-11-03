@@ -26,7 +26,7 @@ repositories {
 dependencies {
     constraints {
         // Libraries
-        api('com.exactpro.th2:common:2.3.1')
+        api('com.exactpro.th2:common:2.3.3')
         api('com.exactpro.th2:sailfish-utils:2.1.0')
         api('com.exactpro.th2:check1:2.0.1')
         api('com.exactpro.th2:check2:2.0.1')
