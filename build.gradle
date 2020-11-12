@@ -71,7 +71,7 @@ dependencies {
         // gRPC libraries
         api('com.exactpro.th2:grpc-service-generator:2.0.5')
 
-        api('com.exactpro.th2:grpc-common:2.2.0')
+        api('com.exactpro.th2:grpc-common:2.3.0')
         api('com.exactpro.th2:grpc-act-template:2.1.0')
         api('com.exactpro.th2:grpc-util:2.2.2')
         api('com.exactpro.th2:grpc-check1:2.1.2')
