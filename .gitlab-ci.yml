@@ -1,7 +1,4 @@
 variables:
-  MAJOR_VERSION: "2"
-  MINOR_VERSION: "2"
-  MAINTENANCE_VERSION: "0"
   DOCKER_PUBLISH_ENABLED: "false"
 
 include:
