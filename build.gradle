@@ -27,7 +27,7 @@ dependencies {
     constraints {
         // Libraries
         api('com.exactpro.th2:common:2.4.1')
-        api('com.exactpro.th2:sailfish-utils:2.1.0')
+        api('com.exactpro.th2:sailfish-utils:2.2.0')
         api('com.exactpro.th2:check1:2.2.0')
         api('com.exactpro.th2:check2:2.2.0')
         api('com.exactpro.th2:store-common:2.6.0')
@@ -73,8 +73,8 @@ dependencies {
 
         api('com.exactpro.th2:grpc-common:2.3.0')
         api('com.exactpro.th2:grpc-act-template:2.2.0')
-        api('com.exactpro.th2:grpc-util:2.2.2')
-        api('com.exactpro.th2:grpc-check1:2.1.2')
+        api('com.exactpro.th2:grpc-util:2.3.0')
+        api('com.exactpro.th2:grpc-check1:2.2.0')
         api('com.exactpro.th2:grpc-sim:2.2.0')
         api('com.exactpro.th2:grpc-sim-template:2.1.2')
         api('com.exactpro.th2:grpc-hand:2.0.2')
