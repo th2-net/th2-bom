@@ -2,18 +2,18 @@
 
 This project contains list of dependencies with their versions that are compatible and can be used with each other.
 
-**NOTE: the BOM can be used only for Java and Java based projects. All, dependencies specified in it are Java libraries**
+**NOTE: the BOM can be used only for Java based projects. All, dependencies specified in it are Java libraries**
 
 It provides users who interact with the TH2 (weather he or she writes a script or a new component) with ability to
-specify dependencies that are required for development in TH2 environment without defining a version for those dependencies.
-The version will be taken from **the BOM** and it guarantees that different TH2 dependencies _will be compatible with each other_.
-Also, it guarantees that if you use some libraries that are also used by TH2 you _won't use incompatible libraries' versions_.
+specify dependencies that are required for development in the th2 environment without defining a version for those dependencies.
+The version will be taken from **the BOM** and it guarantees that different th2 dependencies _will be compatible with each other_.
+Also, it guarantees that if you use some libraries that are also used by th2 you _won't use incompatible libraries' versions_.
 
 More information about what is 'BOM' and what is its purpose you can find [here](https://en.wikipedia.org/wiki/Software_bill_of_materials).
 
 ## When you need to use BOM?
 
-If you are developing script or a new component for TH2 you need to use certain libraries for integration with th2-schema and other components.
+If you are developing a script or a component for th2 you need to use certain libraries for integration with th2-infra-schema and other components.
 You need to know what version of each component to use and what versions are compatible.
 Also, you need to update versions sometimes.
 In this case, you need to know which components versions to upgrade and if they are compatible with other dependencies.
@@ -34,7 +34,7 @@ which are using BOM with same MINOR and MAJOR versions.
 If you upgrade the **MINOR** version of BOM your code still will compile and keep working with components
 which are using BOM with same MAJOR and same or previous MINOR versions. Also, you became able to call API that was added in the current MINOR version.
 
-If you upgrade the **MAJOR** version of BOM your codec might not compile anymore because some components can have changes
+If you upgrade the **MAJOR** version of BOM your code might not compile anymore because some components can have changes
 that breaks backward compatibility. You might need to change your code to make it compile again.
 Also, you might need to change some logic in your script/component (it depends on changes made in the dependencies that you use).
 
