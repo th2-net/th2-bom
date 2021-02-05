@@ -14,6 +14,7 @@ ext {
     protobufVersion     = '3.13.0'
     jacksonVersion      = '2.11.2'
     prometheusVersion   = '0.9.0'
+    cassandraVersion    = '4.2.0'
 }
 
 group = 'com.exactpro.th2'
@@ -33,7 +34,6 @@ dependencies {
         api('com.exactpro.th2:store-common:2.6.0')
 
         api("com.rabbitmq:amqp-client:5.9.0")
-        api("com.datastax.cassandra:cassandra-driver-core:3.6.0")
 
         api("com.exactpro.th2:cradle-cassandra:${cradleVersion}")
         api("com.exactpro.th2:cradle-core:${cradleVersion}")
@@ -69,6 +69,12 @@ dependencies {
 
         // gRPC libraries
         api('com.exactpro.th2:grpc-service-generator:2.0.5')
+        
+        //Cassandra libraries
+        api "com.datastax.oss:java-driver-core:${cassandraVersion}"
+        api "com.datastax.oss:java-driver-query-builder:${cassandraVersion}"
+        api "com.datastax.oss:java-driver-mapper-processor:${cassandraVersion}"
+        api "com.datastax.oss:java-driver-mapper-runtime:${cassandraVersion}"
 
         api('com.exactpro.th2:grpc-common:2.3.0')
         api('com.exactpro.th2:grpc-util:2.3.0')
