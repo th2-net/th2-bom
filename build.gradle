@@ -99,10 +99,10 @@ dependencies {
     }
 }
 
-java-platform {
-    withJavadocJar()
-    withSourcesJar()
-}
+// java {
+//     withJavadocJar()
+//     withSourcesJar()
+// }
 
 // conditionals for publications
 tasks.withType(PublishToMavenRepository) {
