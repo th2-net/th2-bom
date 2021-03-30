@@ -196,7 +196,6 @@ signing {
 }
 
 clean {
-    delete genDir
     delete sharedDir
 }
 
