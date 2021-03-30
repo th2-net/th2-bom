@@ -1,5 +1,4 @@
 plugins {
-    id 'java'
     id 'java-platform'
     id 'maven-publish'
     id "com.jfrog.bintray" version '1.8.5'
@@ -135,7 +134,7 @@ tasks.whenTaskAdded {task ->
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            from(components.java)
+            from(components.javaPlatform)
             pom {
               name = rootProject.name
               packaging = 'jar'
