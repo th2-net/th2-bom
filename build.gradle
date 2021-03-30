@@ -99,7 +99,7 @@ dependencies {
     }
 }
 
-java {
+java-platform {
     withJavadocJar()
     withSourcesJar()
 }
