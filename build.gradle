@@ -1,7 +1,6 @@
 plugins {
     id 'java-platform'
     id 'maven-publish'
-    id "com.jfrog.bintray" version '1.8.5'
     id "io.github.gradle-nexus.publish-plugin" version "1.0.0"
     id 'signing'
 }
@@ -23,23 +22,6 @@ version = release_version
 
 repositories {
     mavenCentral()
-    maven {
-        name 'Bintray'
-        url 'https://dl.bintray.com/exactpro/th2'
-    }
-    maven {
-            name 'Sonatype_snapshots'
-            url 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
-    }
-    maven {
-            name 'Sonatype_releases'
-            url 'https://s01.oss.sonatype.org/content/repositories/releases/'
-    }
-
-    configurations.all {
-        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-        resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
-    }
 }
 
 dependencies {
@@ -98,11 +80,6 @@ dependencies {
         api('com.exactpro.th2:grpc-estore:2.0.15') // deprecated
     }
 }
-
-// java {
-//     withJavadocJar()
-//     withSourcesJar()
-// }
 
 // conditionals for publications
 tasks.withType(PublishToMavenRepository) {
