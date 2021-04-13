@@ -93,7 +93,6 @@ publishing {
                 from components.javaPlatform
                 pom {
                   name = rootProject.name
-                  packaging = 'jar'
                   description = rootProject.description
                   url = vcs_url
                   scm {
