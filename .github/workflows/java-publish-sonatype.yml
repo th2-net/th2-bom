@@ -5,10 +5,8 @@ on:
     branches:
     - master
     - version-*
-    - th2-1515
-    # paths:
-    # - gradle.properties
-
+    paths:
+    - gradle.properties
 jobs:
   build:
     runs-on: ubuntu-latest

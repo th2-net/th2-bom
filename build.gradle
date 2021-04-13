@@ -17,12 +17,11 @@ ext {
     prometheusVersion   = '0.9.0'
 }
 
-group = 'com.exactpro.test'
-// group = 'com.exactpro.th2'
+group = 'com.exactpro.th2'
 version = release_version
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 javaPlatform {
@@ -86,6 +85,33 @@ dependencies {
     }
 }
 
+// conditionals for publications
+tasks.withType(PublishToMavenRepository) {
+    onlyIf {
+        (repository == publishing.repositories.nexusRepository &&
+            project.hasProperty('nexus_user') &&
+            project.hasProperty('nexus_password') &&
+            project.hasProperty('nexus_url')) ||
+        (repository == publishing.repositories.sonatype &&
+            project.hasProperty('sonatypeUsername') &&
+            project.hasProperty('sonatypePassword')) ||
+        (repository == publishing.repositories.localRepo)
+    }
+}
+tasks.withType(Sign) {
+    onlyIf { project.hasProperty('signingKey') &&
+        project.hasProperty('signingPassword')
+    }
+}
+// disable running task 'initializeSonatypeStagingRepository' on a gitlab
+tasks.whenTaskAdded {task ->
+    if(task.name.equals('initializeSonatypeStagingRepository') &&
+        !(project.hasProperty('sonatypeUsername') && project.hasProperty('sonatypePassword'))
+    ) {
+        task.enabled = false
+    }
+}
+
 publishing {
     publishing {
         publications {
@@ -114,17 +140,23 @@ publishing {
                   scm {
                     url = vcs_url
                   }
-                }
+               }
             }
         }
     }
-
     repositories {
-        repositories {
-            maven {
-                name = 'localRepo'
-                url = sharedDir
+        maven {
+            name = 'localRepo'
+            url = sharedDir
+        }
+//Nexus repo to publish from gitlab
+        maven {
+            name = 'nexusRepository'
+            credentials {
+                username = project.findProperty('nexus_user')
+                password = project.findProperty('nexus_password')
             }
+            url = project.findProperty('nexus_url')
         }
     }
 }
@@ -148,3 +180,4 @@ signing {
 clean {
     delete sharedDir
 }
+
