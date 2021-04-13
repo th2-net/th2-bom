@@ -5,6 +5,7 @@ on:
     branches:
     - master
     - version-*
+    - th2-1515
     # paths:
     # - gradle.properties
 
