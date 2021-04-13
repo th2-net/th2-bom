@@ -1,7 +1,8 @@
 plugins {
     id 'java-platform'
     id 'maven-publish'
-    id "com.jfrog.bintray" version '1.8.5'
+    id "io.github.gradle-nexus.publish-plugin" version "1.0.0"
+    id 'signing'
 }
 
 ext {
@@ -16,11 +17,16 @@ ext {
     prometheusVersion   = '0.9.0'
 }
 
-group = 'com.exactpro.th2'
+group = 'com.exactpro.test'
+// group = 'com.exactpro.th2'
 version = release_version
 
 repositories {
     jcenter()
+}
+
+javaPlatform {
+    allowDependencies()
 }
 
 dependencies {
@@ -86,17 +92,6 @@ publishing {
             th2Platform(MavenPublication) {
                 from components.javaPlatform
             }
-            bintrayPublication(MavenPublication) {
-                from components.javaPlatform
-                groupId group
-                artifactId rootProject.name
-                version project.version
-                pom.withXml {
-                    def root = asNode()
-                    root.appendNode('name', rootProject.name)
-                    root.appendNode('url', "${vcs_url}")
-                }
-            }
         }
     }
 
@@ -110,21 +105,22 @@ publishing {
     }
 }
 
-bintray {
-    user = "${bintray_user}"
-    key = "${bintray_key}"
-    publications = ['bintrayPublication']
-    pkg {
-        repo = 'th2'
-        name = rootProject.name
-        userOrg = 'exactpro'
-        licenses = ['Apache-2.0']
-        vcsUrl = "${vcs_url}"
-        version {
-            name = project.version
-            desc = project.version
-            released  = new Date()
+nexusPublishing {
+    repositories {
+        sonatype {
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
         }
     }
-    publish = true
+}
+
+signing {
+    def signingKey = findProperty("signingKey")
+    def signingPassword = findProperty("signingPassword")
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign publishing.publications.th2Platform
+}
+
+clean {
+    delete sharedDir
 }
