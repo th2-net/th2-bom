@@ -24,6 +24,10 @@ repositories {
     mavenCentral()
 }
 
+javaPlatform {
+    allowDependencies()
+}
+
 dependencies {
     constraints {
         // Libraries
@@ -109,33 +113,34 @@ tasks.whenTaskAdded {task ->
 }
 
 publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from(components.javaPlatform)
-            pom {
-              name = rootProject.name
-              packaging = 'jar'
-              description = rootProject.description
-              url = vcs_url
-              scm {
-                url = vcs_url
-              }
-              licenses {
-                license {
-                  name = 'The Apache License, Version 2.0'
-                  url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                }
-              }
-              developers {
-                developer {
-                  id = 'developer'
-                  name = 'developer'
-                  email = 'developer@exactpro.com'
-                }
-              }
-              scm {
-                url = vcs_url
-              }
+    publishing {
+        publications {
+            th2Platform(MavenPublication) {
+                from components.javaPlatform
+                pom {
+                  name = rootProject.name
+                  description = rootProject.description
+                  url = vcs_url
+                  scm {
+                    url = vcs_url
+                  }
+                  licenses {
+                    license {
+                      name = 'The Apache License, Version 2.0'
+                      url = 'http://www.apache.org/licenses/LICENSE-2.0.    txt'
+                    }
+                  }
+                  developers {
+                    developer {
+                      id = 'developer'
+                      name = 'developer'
+                      email = 'developer@exactpro.com'
+                    }
+                  }
+                  scm {
+                    url = vcs_url
+                  }
+               }
             }
         }
     }
@@ -169,7 +174,7 @@ signing {
     def signingKey = findProperty("signingKey")
     def signingPassword = findProperty("signingPassword")
     useInMemoryPgpKeys(signingKey, signingPassword)
-    sign publishing.publications.mavenJava
+    sign publishing.publications.th2Platform
 }
 
 clean {

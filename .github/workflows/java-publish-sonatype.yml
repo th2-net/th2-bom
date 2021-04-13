@@ -7,7 +7,6 @@ on:
     - version-*
     paths:
     - gradle.properties
-
 jobs:
   build:
     runs-on: ubuntu-latest
