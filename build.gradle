@@ -14,6 +14,7 @@ ext {
     jacksonVersion      = '2.13.3'
     prometheusVersion   = '0.16.0'
     cassandraDriver     = '4.14.1'
+    kotlinVersion = "1.6.21"
 }
 
 group = 'com.exactpro.th2'
@@ -49,6 +50,8 @@ dependencies {
 
         api("com.google.protobuf:protobuf-java-util:${protobufVersion}")
         api("com.google.protobuf:protoc:${protobufVersion}")
+
+        api ("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
 
         api("org.apache.logging.log4j:log4j-slf4j-impl:${slf4jVersion}")
         api("org.apache.logging.log4j:log4j-1.2-api:${slf4jVersion}")
