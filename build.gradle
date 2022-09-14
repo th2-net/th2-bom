@@ -11,7 +11,7 @@ ext {
     cradleVersion       = '2.1.0'
 
     slf4jVersion        = '2.17.2'
-    grpcVersion         = '1.44.0'
+    grpcVersion         = '1.49.0'
     protobufVersion     = '3.18.1'
     jacksonVersion      = '2.11.2'
     prometheusVersion   = '0.9.0'
