@@ -10,7 +10,7 @@ ext {
 
     cradleVersion       = '2.1.0'
 
-    slf4jVersion        = '1.7.30'
+    slf4jVersion        = '2.17.2'
     grpcVersion         = '1.44.0'
     protobufVersion     = '3.18.1'
     jacksonVersion      = '2.11.2'
@@ -55,13 +55,16 @@ dependencies {
         api("io.grpc:grpc-netty:${grpcVersion}")
         api("io.grpc:protoc-gen-grpc-java:${grpcVersion}")
 
-        api("org.slf4j:slf4j-api:${slf4jVersion}")
-        api("org.slf4j:slf4j-log4j12:${slf4jVersion}")
+        api("org.apache.logging.log4j:log4j-slf4j-impl:${slf4jVersion}")
+        api("org.apache.logging.log4j:log4j-1.2-api:${slf4jVersion}")
+        api("org.apache.logging.log4j:log4j-api:${slf4jVersion}")
 
         // Prometheus FIXME: remove when we have a facade in common
         api("io.prometheus:simpleclient:${prometheusVersion}")
         api("io.prometheus:simpleclient_hotspot:${prometheusVersion}")
         api("io.prometheus:simpleclient_httpserver:${prometheusVersion}")
+        api("io.prometheus:simpleclient_log4j2:${prometheusVersion}")
+        api("io.prometheus:simpleclient_log4j:${prometheusVersion}")
     }
 }
 
