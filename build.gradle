@@ -8,7 +8,8 @@ plugins {
 ext {
     sharedDir           = file('shared')
 
-    slf4jVersion        = '2.17.2'
+    slf4jVersion        = '2.0.3'
+    log4jVersion        = '2.19.0'
     grpcVersion         = '1.48.1'
     protobufVersion     = '3.21.5'
     jacksonVersion      = '2.13.3'
@@ -50,10 +51,11 @@ dependencies {
         api("com.google.protobuf:protobuf-java-util:${protobufVersion}")
         api("com.google.protobuf:protoc:${protobufVersion}")
 
-        api("org.apache.logging.log4j:log4j-slf4j-impl:${slf4jVersion}")
-        api("org.apache.logging.log4j:log4j-1.2-api:${slf4jVersion}")
-        api("org.apache.logging.log4j:log4j-api:${slf4jVersion}")
-        api("org.apache.logging.log4j:log4j-core:${slf4jVersion}")
+        api("org.slf4j:slf4j-api:${slf4jVersion}")
+        api("org.apache.logging.log4j:log4j-slf4j2-impl:${log4jVersion}")
+        api("org.apache.logging.log4j:log4j-1.2-api:${log4jVersion}")
+        api("org.apache.logging.log4j:log4j-api:${log4jVersion}")
+        api("org.apache.logging.log4j:log4j-core:${log4jVersion}")
 
         // Prometheus FIXME: remove when we have a facade in common
         api("io.prometheus:simpleclient:${prometheusVersion}")
