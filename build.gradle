@@ -10,11 +10,11 @@ ext {
 
     slf4jVersion        = '2.0.3'
     log4jVersion        = '2.19.0'
-    grpcVersion         = '1.48.1'
+    grpcVersion         = '1.51.0'
     protobufVersion     = '3.21.5'
     jacksonVersion      = '2.13.3'
     prometheusVersion   = '0.16.0'
-    cassandraDriver     = '4.14.1'
+    cassandraDriver     = '4.15.0'
 }
 
 group = 'com.exactpro.th2'
@@ -31,7 +31,7 @@ javaPlatform {
 dependencies {
     api platform('org.jetbrains.kotlin:kotlin-bom:1.6.21')
     api platform("io.grpc:grpc-bom:$grpcVersion")
-    api platform('com.fasterxml.jackson:jackson-bom:2.13.4')
+    api platform('com.fasterxml.jackson:jackson-bom:2.14.0')
     api platform("com.datastax.oss:java-driver-bom:$cassandraDriver")
 
     constraints {
