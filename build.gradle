@@ -52,6 +52,7 @@ dependencies {
         api("com.google.protobuf:protoc:${protobufVersion}")
 
         api("org.slf4j:slf4j-api:${slf4jVersion}")
+        api("org.apache.logging.log4j:log4j-slf4j-impl:${log4jVersion}")
         api("org.apache.logging.log4j:log4j-slf4j2-impl:${log4jVersion}")
         api("org.apache.logging.log4j:log4j-1.2-api:${log4jVersion}")
         api("org.apache.logging.log4j:log4j-api:${log4jVersion}")
@@ -86,7 +87,7 @@ tasks.withType(Sign) {
 }
 // disable running task 'initializeSonatypeStagingRepository' on a gitlab
 tasks.whenTaskAdded {task ->
-    if(task.name.equals('initializeSonatypeStagingRepository') &&
+    if(task.name == 'initializeSonatypeStagingRepository' &&
         !(project.hasProperty('sonatypeUsername') && project.hasProperty('sonatypePassword'))
     ) {
         task.enabled = false
