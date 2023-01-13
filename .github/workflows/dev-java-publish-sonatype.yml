@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-job:
-    uses: th2-net/.github/.github/workflows/compound-java-dev.yml@main
+    uses: th2-net/.github/.github/workflows/compound-java-dev.yml@th2-4566-add-snapshot
     with:
       build-target: 'Sonatype'
       runsOn: ubuntu-latest
