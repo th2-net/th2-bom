@@ -35,7 +35,7 @@ javaPlatform {
 dependencies {
     api platform('org.jetbrains.kotlin:kotlin-bom:1.6.21')
     api platform("io.grpc:grpc-bom:$grpcVersion")
-    api platform('com.fasterxml.jackson:jackson-bom:2.13.4.1')
+    api platform('com.fasterxml.jackson:jackson-bom:2.13.4')
     api platform("com.datastax.oss:java-driver-bom:$cassandraDriver")
 
     constraints {
@@ -43,6 +43,8 @@ dependencies {
         api("com.rabbitmq:amqp-client:5.9.0")
 
         api("org.jetbrains:annotations:23.0.0")
+
+        api("com.fasterxml.jackson.core:jackson-databind:2.13.4.1")
 
         api("org.apache.commons:commons-text:1.10")
         api("org.apache.commons:commons-lang3:3.12.0")
