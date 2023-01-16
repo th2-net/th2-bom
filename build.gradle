@@ -35,7 +35,7 @@ javaPlatform {
 dependencies {
     api platform('org.jetbrains.kotlin:kotlin-bom:1.6.21')
     api platform("io.grpc:grpc-bom:$grpcVersion")
-    api platform('com.fasterxml.jackson:jackson-bom:2.13.4.20221013')
+    api platform('com.fasterxml.jackson:jackson-bom:2.14.0')
     api platform("com.datastax.oss:java-driver-bom:$cassandraDriver")
 
     constraints {
@@ -43,6 +43,9 @@ dependencies {
         api("com.rabbitmq:amqp-client:5.9.0")
 
         api("org.jetbrains:annotations:23.0.0")
+        api("io.netty:netty-codec-http:4.1.86.Final") {
+            because("there is no version for grpc-bom where `non-infected` version is used.")
+        }
 
         api("org.apache.commons:commons-text:1.10.0")
         api("org.apache.commons:commons-lang3:3.12.0")
