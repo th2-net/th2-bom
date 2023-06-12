@@ -3,6 +3,7 @@ plugins {
     id 'maven-publish'
     id "io.github.gradle-nexus.publish-plugin" version "1.0.0"
     id 'signing'
+    id "org.owasp.dependencycheck" version "8.1.2"
 }
 
 ext {
@@ -31,6 +32,16 @@ repositories {
 
 javaPlatform {
     allowDependencies()
+}
+
+dependencyCheck {
+    formats=['SARIF', 'JSON', 'HTML']
+    failBuildOnCVSS=5
+    analyzers {
+        assemblyEnabled = false
+        nugetconfEnabled = false
+        nodeEnabled = false
+    }
 }
 
 dependencies {
