@@ -15,7 +15,7 @@ ext {
     protobufVersion     = '3.21.7'
     jacksonVersion      = '2.15.2'
     prometheusVersion   = '0.16.0'
-    cassandraDriver     = '4.14.1'
+    cassandraDriver     = '4.15.0'
     nettyVersion        = '4.1.93.Final'
 }
 
@@ -47,7 +47,7 @@ dependencyCheck {
 dependencies {
     api platform('org.jetbrains.kotlin:kotlin-bom:1.6.21')
     api platform("io.grpc:grpc-bom:$grpcVersion")
-    api platform('com.fasterxml.jackson:jackson-bom:2.14.0')
+    api platform("com.fasterxml.jackson:jackson-bom:$jacksonVersion")
     api platform("com.datastax.oss:java-driver-bom:$cassandraDriver")
     api platform("io.netty:netty-bom:$nettyVersion")
 
