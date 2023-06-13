@@ -13,10 +13,10 @@ ext {
     log4jVersion        = '2.19.0'
     grpcVersion         = '1.48.1'
     protobufVersion     = '3.21.7'
-    jacksonVersion      = '2.13.3'
+    jacksonVersion      = '2.15.2'
     prometheusVersion   = '0.16.0'
     cassandraDriver     = '4.14.1'
-    nettyVersion        = '4.1.89.Final'
+    nettyVersion        = '4.1.93.Final'
 }
 
 group = 'com.exactpro.th2'
