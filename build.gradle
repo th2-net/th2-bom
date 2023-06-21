@@ -7,16 +7,16 @@ plugins {
 }
 
 ext {
-    sharedDir           = file('shared')
+    sharedDir = file('shared')
 
-    slf4jVersion        = '2.0.3'
-    log4jVersion        = '2.19.0'
-    grpcVersion         = '1.48.1'
-    protobufVersion     = '3.21.7'
-    jacksonVersion      = '2.15.2'
-    prometheusVersion   = '0.16.0'
-    cassandraDriver     = '4.15.0'
-    nettyVersion        = '4.1.93.Final'
+    slf4jVersion = '2.0.7'
+    log4jVersion = '2.20.0'
+    grpcVersion = '1.56.0'
+    protobufVersion = '3.23.3'
+    jacksonVersion = '2.15.2'
+    prometheusVersion = '0.16.0'
+    cassandraDriver = '4.15.0'
+    nettyVersion = '4.1.94.Final'
 }
 
 group = 'com.exactpro.th2'
@@ -35,8 +35,8 @@ javaPlatform {
 }
 
 dependencyCheck {
-    formats=['SARIF', 'JSON', 'HTML']
-    failBuildOnCVSS=5
+    formats = ['SARIF', 'JSON', 'HTML']
+    failBuildOnCVSS = 5
     analyzers {
         assemblyEnabled = false
         nugetconfEnabled = false
@@ -87,27 +87,28 @@ dependencies {
 }
 
 // conditionals for publications
-tasks.withType(PublishToMavenRepository) {
+tasks.withType(PublishToMavenRepository).configureEach {
     onlyIf {
         (repository == publishing.repositories.nexusRepository &&
-            project.hasProperty('nexus_user') &&
-            project.hasProperty('nexus_password') &&
-            project.hasProperty('nexus_url')) ||
-        (repository == publishing.repositories.sonatype &&
-            project.hasProperty('sonatypeUsername') &&
-            project.hasProperty('sonatypePassword')) ||
-        (repository == publishing.repositories.localRepo)
+                project.hasProperty('nexus_user') &&
+                project.hasProperty('nexus_password') &&
+                project.hasProperty('nexus_url')) ||
+                (repository == publishing.repositories.sonatype &&
+                        project.hasProperty('sonatypeUsername') &&
+                        project.hasProperty('sonatypePassword')) ||
+                (repository == publishing.repositories.localRepo)
     }
 }
-tasks.withType(Sign) {
-    onlyIf { project.hasProperty('signingKey') &&
-        project.hasProperty('signingPassword')
+tasks.withType(Sign).configureEach {
+    onlyIf {
+        project.hasProperty('signingKey') &&
+                project.hasProperty('signingPassword')
     }
 }
 // disable running task 'initializeSonatypeStagingRepository' on a gitlab
-tasks.whenTaskAdded {task ->
-    if(task.name.equals('initializeSonatypeStagingRepository') &&
-        !(project.hasProperty('sonatypeUsername') && project.hasProperty('sonatypePassword'))
+tasks.configureEach { task ->
+    if (task.name.equals('initializeSonatypeStagingRepository') &&
+            !(project.hasProperty('sonatypeUsername') && project.hasProperty('sonatypePassword'))
     ) {
         task.enabled = false
     }
@@ -119,29 +120,29 @@ publishing {
             th2Platform(MavenPublication) {
                 from components.javaPlatform
                 pom {
-                  name = rootProject.name
-                  description = rootProject.description
-                  url = vcs_url
-                  scm {
+                    name = rootProject.name
+                    description = rootProject.description
                     url = vcs_url
-                  }
-                  licenses {
-                    license {
-                      name = 'The Apache License, Version 2.0'
-                      url = 'http://www.apache.org/licenses/LICENSE-2.0.    txt'
+                    scm {
+                        url = vcs_url
                     }
-                  }
-                  developers {
-                    developer {
-                      id = 'developer'
-                      name = 'developer'
-                      email = 'developer@exactpro.com'
+                    licenses {
+                        license {
+                            name = 'The Apache License, Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.    txt'
+                        }
                     }
-                  }
-                  scm {
-                    url = vcs_url
-                  }
-               }
+                    developers {
+                        developer {
+                            id = 'developer'
+                            name = 'developer'
+                            email = 'developer@exactpro.com'
+                        }
+                    }
+                    scm {
+                        url = vcs_url
+                    }
+                }
             }
         }
     }
@@ -172,8 +173,8 @@ nexusPublishing {
 }
 
 signing {
-    def signingKey = findProperty("signingKey")
-    def signingPassword = findProperty("signingPassword")
+    String signingKey = findProperty("signingKey")
+    String signingPassword = findProperty("signingPassword")
     useInMemoryPgpKeys(signingKey, signingPassword)
     sign publishing.publications.th2Platform
 }
