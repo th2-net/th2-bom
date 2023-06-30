@@ -63,3 +63,13 @@ Also, Gradle supports wildcards for BOM's version (unlike Maven).
 So you can declare that you need any BOM with certain major and minor versions, but you are not worried about patch/maintenance version.
 
 In most cases it is not necessary, but it might be useful sometimes.
+
+# Release notes:
+
+## 4.4.0
+
+* slf4j from `2.0.3` to `2.0.7`
+* log4j from `2.19.0` to `2.20.0`
+* gRPC from `1.48.1` to `1.56.0`
+* protobuf from `3.21.7` to `3.23.3`
+* netty from `4.1.93.Final` to `4.1.94.Final`
