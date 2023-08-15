@@ -66,8 +66,16 @@ In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
 
+## 4.5.0
+
+### Updated 
+
+### Gradle plugin
+* added gradle-git-properties 
+
 ## 4.4.0
 
+### Updated
 * slf4j from `2.0.3` to `2.0.7`
 * log4j from `2.19.0` to `2.20.0`
 * gRPC from `1.48.1` to `1.56.0`
