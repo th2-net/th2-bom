@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project
+# TH2 'Bill of Materials' (BOM) project (4.5.0)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -69,9 +69,11 @@ In most cases it is not necessary, but it might be useful sometimes.
 ## 4.5.0
 
 ### Updated 
+* kotlin-bom from `1.6.21` to `1.8.22`
 
 ### Gradle plugin
-* added gradle-git-properties 
+* added gradle-git-properties: `2.4.1`
+* updated owasp from `8.2.1` to `8.3.1`
 
 ## 4.4.0
 
