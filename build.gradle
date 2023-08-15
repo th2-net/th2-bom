@@ -3,12 +3,11 @@ plugins {
     id 'maven-publish'
     id "io.github.gradle-nexus.publish-plugin" version "1.0.0"
     id 'signing'
-    id "org.owasp.dependencycheck" version "8.2.1"
+    id "org.owasp.dependencycheck" version "8.3.1"
+    id "com.gorylenko.gradle-git-properties" version "2.4.1"
 }
 
 ext {
-    sharedDir = file('shared')
-
     slf4jVersion = '2.0.7'
     log4jVersion = '2.20.0'
     grpcVersion = '1.56.0'
@@ -45,7 +44,7 @@ dependencyCheck {
 }
 
 dependencies {
-    api platform('org.jetbrains.kotlin:kotlin-bom:1.6.21')
+    api platform('org.jetbrains.kotlin:kotlin-bom:1.8.22')
     api platform("io.grpc:grpc-bom:$grpcVersion")
     api platform("com.fasterxml.jackson:jackson-bom:$jacksonVersion")
     api platform("com.datastax.oss:java-driver-bom:$cassandraDriver")
@@ -95,8 +94,7 @@ tasks.withType(PublishToMavenRepository).configureEach {
                 project.hasProperty('nexus_url')) ||
                 (repository == publishing.repositories.sonatype &&
                         project.hasProperty('sonatypeUsername') &&
-                        project.hasProperty('sonatypePassword')) ||
-                (repository == publishing.repositories.localRepo)
+                        project.hasProperty('sonatypePassword'))
     }
 }
 tasks.withType(Sign).configureEach {
@@ -107,7 +105,7 @@ tasks.withType(Sign).configureEach {
 }
 // disable running task 'initializeSonatypeStagingRepository' on a gitlab
 tasks.configureEach { task ->
-    if (task.name.equals('initializeSonatypeStagingRepository') &&
+    if (task.name == 'initializeSonatypeStagingRepository' &&
             !(project.hasProperty('sonatypeUsername') && project.hasProperty('sonatypePassword'))
     ) {
         task.enabled = false
@@ -147,11 +145,7 @@ publishing {
         }
     }
     repositories {
-        maven {
-            name = 'localRepo'
-            url = sharedDir
-        }
-//Nexus repo to publish from gitlab
+        //Nexus repo to publish from gitlab
         maven {
             name = 'nexusRepository'
             credentials {
@@ -178,8 +172,3 @@ signing {
     useInMemoryPgpKeys(signingKey, signingPassword)
     sign publishing.publications.th2Platform
 }
-
-clean {
-    delete sharedDir
-}
-
