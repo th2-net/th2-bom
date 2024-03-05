@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.5.0)
+# TH2 'Bill of Materials' (BOM) project (4.6.0)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -65,6 +65,24 @@ So you can declare that you need any BOM with certain major and minor versions, 
 In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
+
+## 4.6.0
+
+### Updated
+
+* log4j 2.20.0 -> 2.23.0
+* grpc 1.56.0 -> 1.62.2
+* protobuf 3.23.3 -> 3.25.3
+* jackson 2.15.2 -> 2.16.1
+* cassandra driver 4.15.0 -> 4.17.0
+* netty 4.1.94.Final -> 4.1.100.Final
+* amqp-client 5.9.0 -> 5.20.0
+* jetbrains-annotations 23.0.0 -> 24.1.0
+* commons-test 1.10.0 -> 1.11.0
+* commons-lang3 3.12.0 -> 3.14.0
+* commons-io 2.11.0 -> 2.15.1
+* commons-cli 1.5.0 -> 1.6.0
+* google-guava 32.0.1-jre -> 33.0.0-jre
 
 ## 4.5.0
 
