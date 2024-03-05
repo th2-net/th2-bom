@@ -14,7 +14,7 @@ ext {
     protobufVersion = '3.25.3'
     jacksonVersion = '2.16.1'
     prometheusVersion = '0.16.0'
-    cassandraDriver = '4.15.0'
+    cassandraDriver = '4.17.0'
     nettyVersion = '4.1.100.Final'
 }
 
