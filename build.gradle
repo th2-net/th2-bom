@@ -15,7 +15,7 @@ ext {
     jacksonVersion = '2.16.1'
     prometheusVersion = '0.16.0'
     cassandraDriver = '4.17.0'
-    nettyVersion = '4.1.100.Final'
+    nettyVersion = '4.1.108.Final'
 }
 
 group = 'com.exactpro.th2'
