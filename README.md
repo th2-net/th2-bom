@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.6.1)
+# TH2 'Bill of Materials' (BOM) project (4.7.0)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -65,6 +65,17 @@ So you can declare that you need any BOM with certain major and minor versions, 
 In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
+
+## 4.7.0
+
+### Updated
+
+* slf4j 2.0.7 -> 2.0.16
+* log4j 2.23.0 -> 2.23.1
+* grpc 1.62.2 -> 1.66.0
+* protobuf 3.25.3 -> 3.25.4
+* jackson 2.16.1 -> 2.17.2
+* netty 4.1.108.Final -> 4.1.112.Final
 
 ## 4.6.1
 
