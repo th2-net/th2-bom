@@ -1,21 +1,26 @@
+import com.github.jk1.license.filter.LicenseBundleNormalizer
+import com.github.jk1.license.render.JsonReportRenderer
+
 plugins {
     id 'java-platform'
     id 'maven-publish'
-    id "io.github.gradle-nexus.publish-plugin" version "1.3.0"
+    id "io.github.gradle-nexus.publish-plugin" version "2.0.0"
     id 'signing'
-    id "org.owasp.dependencycheck" version "9.0.9"
-    id "com.gorylenko.gradle-git-properties" version "2.4.1"
+    id 'org.owasp.dependencycheck' version "10.0.4"
+    id "com.gorylenko.gradle-git-properties" version "2.4.2"
+    id 'com.github.jk1.dependency-license-report' version "2.9"
+    id 'de.undercouch.download' version "5.6.0"
 }
 
 ext {
-    slf4jVersion = '2.0.7'
-    log4jVersion = '2.23.0'
-    grpcVersion = '1.62.2'
-    protobufVersion = '3.25.3'
-    jacksonVersion = '2.16.1'
+    slf4jVersion = '2.0.16'
+    log4jVersion = '2.23.1'
+    grpcVersion = '1.66.0'
+    protobufVersion = '3.25.4' // gRPC 1.66 libraries uses protobuf 3.+
+    jacksonVersion = '2.17.2'
     prometheusVersion = '0.16.0'
     cassandraDriver = '4.17.0'
-    nettyVersion = '4.1.108.Final'
+    nettyVersion = '4.1.112.Final'
 }
 
 group = 'com.exactpro.th2'
@@ -36,6 +41,12 @@ javaPlatform {
 dependencyCheck {
     formats = ['SARIF', 'JSON', 'HTML']
     failBuildOnCVSS = 5
+
+    nvd {
+        apiKey = project.findProperty("nvdApiKey") as String
+        delay = Integer.valueOf(project.findProperty("nvdDelay") as String)
+    }
+
     analyzers {
         assemblyEnabled = false
         nugetconfEnabled = false
@@ -50,25 +61,26 @@ dependencies {
     api platform("com.datastax.oss:java-driver-bom:$cassandraDriver")
     api platform("io.netty:netty-bom:$nettyVersion")
     api platform("org.apache.logging.log4j:log4j-bom:$log4jVersion")
+    api platform("org.slf4j:slf4j-bom:${slf4jVersion}")
 
     constraints {
         // Libraries
-        api("com.rabbitmq:amqp-client:5.20.0")
+        api("com.rabbitmq:amqp-client:5.21.0")
 
         api("org.jetbrains:annotations:24.1.0")
 
-        api("org.apache.commons:commons-text:1.11.0")
-        api("org.apache.commons:commons-lang3:3.14.0")
-        api('commons-io:commons-io:2.15.1')
-        api("commons-cli:commons-cli:1.6.0")
+        api("org.apache.commons:commons-text:1.12.0")
+        api("org.apache.commons:commons-lang3:3.17.0")
+        api('commons-io:commons-io:2.16.1')
+        api("commons-cli:commons-cli:1.9.0")
         api("org.apache.commons:commons-collections4:4.4")
 
-        api("com.google.guava:guava:33.0.0-jre")
+        api("com.google.guava:guava:33.3.0-jre")
 
         api("com.google.protobuf:protobuf-java-util:${protobufVersion}")
         api("com.google.protobuf:protoc:${protobufVersion}")
 
-        api("org.slf4j:slf4j-api:${slf4jVersion}")
+        api("org.slf4j:slf4j-api")
 
         // Prometheus FIXME: remove when we have a facade in common
         api("io.prometheus:simpleclient:${prometheusVersion}")
@@ -165,4 +177,25 @@ signing {
     String signingPassword = findProperty("signingPassword")
     useInMemoryPgpKeys(signingKey, signingPassword)
     sign publishing.publications.th2Platform
+}
+
+licenseReport {
+    def licenseNormalizerBundlePath = "$buildDir/license-normalizer-bundle.json"
+
+    if (!file(licenseNormalizerBundlePath).exists()) {
+        download.run {
+            src 'https://raw.githubusercontent.com/th2-net/.github/main/license-compliance/gradle-license-report/license-normalizer-bundle.json'
+            dest "$buildDir/license-normalizer-bundle.json"
+            overwrite false
+        }
+    }
+
+    filters = [
+            new LicenseBundleNormalizer(licenseNormalizerBundlePath, false)
+    ]
+    renderers = [
+            new JsonReportRenderer('licenses.json', false),
+    ]
+    excludeOwnGroup = false
+    allowedLicensesFile = new URL("https://raw.githubusercontent.com/th2-net/.github/main/license-compliance/gradle-license-report/allowed-licenses.json")
 }
