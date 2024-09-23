@@ -4,23 +4,12 @@ import com.github.jk1.license.render.JsonReportRenderer
 plugins {
     id 'java-platform'
     id 'maven-publish'
-    id "io.github.gradle-nexus.publish-plugin" version "2.0.0"
+    alias(libs.plugins.publish.plugin)
     id 'signing'
-    id 'org.owasp.dependencycheck' version "10.0.4"
-    id "com.gorylenko.gradle-git-properties" version "2.4.2"
-    id 'com.github.jk1.dependency-license-report' version "2.9"
-    id 'de.undercouch.download' version "5.6.0"
-}
-
-ext {
-    slf4jVersion = '2.0.16'
-    log4jVersion = '2.23.1'
-    grpcVersion = '1.66.0'
-    protobufVersion = '3.25.4' // gRPC 1.66 libraries uses protobuf 3.+
-    jacksonVersion = '2.17.2'
-    prometheusVersion = '0.16.0'
-    cassandraDriver = '4.17.0'
-    nettyVersion = '4.1.112.Final'
+    alias(libs.plugins.dependencycheck)
+    alias(libs.plugins.gradle.git.properties)
+    alias(libs.plugins.dependency.license.report)
+    alias(libs.plugins.download)
 }
 
 group = 'com.exactpro.th2'
@@ -55,39 +44,39 @@ dependencyCheck {
 }
 
 dependencies {
-    api platform('org.jetbrains.kotlin:kotlin-bom:1.8.22')
-    api platform("io.grpc:grpc-bom:$grpcVersion")
-    api platform("com.fasterxml.jackson:jackson-bom:$jacksonVersion")
-    api platform("com.datastax.oss:java-driver-bom:$cassandraDriver")
-    api platform("io.netty:netty-bom:$nettyVersion")
-    api platform("org.apache.logging.log4j:log4j-bom:$log4jVersion")
-    api platform("org.slf4j:slf4j-bom:${slf4jVersion}")
+    api platform(libs.kotlin.bom)
+    api platform(libs.grpc.bom)
+    api platform(libs.jackson.bom)
+    api platform(libs.java.driver.bom)
+    api platform(libs.netty.bom)
+    api platform(libs.log4j.bom)
+    api platform(libs.slf4j.bom)
 
     constraints {
         // Libraries
-        api("com.rabbitmq:amqp-client:5.21.0")
+        api(libs.amqp.client)
 
-        api("org.jetbrains:annotations:24.1.0")
+        api(libs.annotations)
 
-        api("org.apache.commons:commons-text:1.12.0")
-        api("org.apache.commons:commons-lang3:3.17.0")
-        api('commons-io:commons-io:2.16.1')
-        api("commons-cli:commons-cli:1.9.0")
-        api("org.apache.commons:commons-collections4:4.4")
+        api(libs.commons.text)
+        api(libs.commons.lang3)
+        api(libs.commons.io)
+        api(libs.commons.cli)
+        api(libs.commons.collections4)
 
-        api("com.google.guava:guava:33.3.0-jre")
+        api(libs.guava)
 
-        api("com.google.protobuf:protobuf-java-util:${protobufVersion}")
-        api("com.google.protobuf:protoc:${protobufVersion}")
+        api(libs.protobuf.java.util)
+        api(libs.protoc)
 
         api("org.slf4j:slf4j-api")
 
         // Prometheus FIXME: remove when we have a facade in common
-        api("io.prometheus:simpleclient:${prometheusVersion}")
-        api("io.prometheus:simpleclient_hotspot:${prometheusVersion}")
-        api("io.prometheus:simpleclient_httpserver:${prometheusVersion}")
-        api("io.prometheus:simpleclient_log4j2:${prometheusVersion}")
-        api("io.prometheus:simpleclient_log4j:${prometheusVersion}")
+        api(libs.simpleclient)
+        api(libs.simpleclient.hotspot)
+        api(libs.simpleclient.httpserver)
+        api(libs.simpleclient.log4j2)
+        api(libs.simpleclient.log4j)
     }
 }
 

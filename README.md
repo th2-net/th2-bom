@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.7.0)
+# TH2 'Bill of Materials' (BOM) project (4.8.0)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -65,6 +65,15 @@ So you can declare that you need any BOM with certain major and minor versions, 
 In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
+
+## 4.8.0
+
+### Updated
+* netty 4.1.112.Final -> 4.1.113.Final
+* protobuf 3.25.4 -> 3.25.5 (fixed `CVE-2024-7254` vulnerability)
+* log4j 2.23.1 -> 2.24.0
+* amqp-client 5.21.0 -> 5.22.0
+* commons-io 2.16.1 -> `2.17.0`
 
 ## 4.7.0
 

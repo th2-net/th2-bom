@@ -1,0 +1,40 @@
+[versions]
+kotlin = "1.8.22"
+protobuf = "3.25.5" # gRPC 1.66 libraries uses protobuf 3.+
+prometheus = "0.16.0"
+
+[libraries]
+slf4j-bom = { group = "org.slf4j", name = "slf4j-bom", version = "2.0.16" }
+log4j-bom = { group = "org.apache.logging.log4j", name = "log4j-bom", version = "2.24.0" }
+
+netty-bom = { group = "io.netty", name = "netty-bom", version = "4.1.113.Final" }
+jackson-bom = { group = "com.fasterxml.jackson", name = "jackson-bom", version = "2.17.2" }
+java-driver-bom = { group = "com.datastax.oss", name = "java-driver-bom", version = "4.17.0" }
+
+amqp-client = { group = "com.rabbitmq", name = "amqp-client", version = "5.22.0" }
+annotations = { group = "org.jetbrains", name = "annotations", version = "24.1.0" }
+commons-text = { group = "org.apache.commons", name = "commons-text", version = "1.12.0" }
+commons-lang3 = { group = "org.apache.commons", name = "commons-lang3", version = "3.17.0" }
+commons-io = { group = "commons-io", name = "commons-io", version = "2.17.0" }
+commons-cli = { group = "commons-cli", name = "commons-cli", version = "1.9.0" }
+commons-collections4 = { group = "org.apache.commons", name = "commons-collections4", version = "4.4" }
+guava = { group = "com.google.guava", name = "guava", version = "33.3.0-jre" }
+
+grpc-bom = { group = "io.grpc", name = "grpc-bom", version = "1.66.0" }
+protobuf-java-util = { group = "com.google.protobuf", name = "protobuf-java-util", version.ref = "protobuf" }
+protoc = { group = "com.google.protobuf", name = "protoc", version.ref = "protobuf" }
+
+simpleclient = { group = "io.prometheus", name = "simpleclient", version.ref = "prometheus" }
+simpleclient-hotspot = { group = "io.prometheus", name = "simpleclient_hotspot", version.ref = "prometheus" }
+simpleclient-httpserver = { group = "io.prometheus", name = "simpleclient_httpserver", version.ref = "prometheus" }
+simpleclient-log4j2 = { group = "io.prometheus", name = "simpleclient_log4j2", version.ref = "prometheus" }
+simpleclient-log4j = { group = "io.prometheus", name = "simpleclient_log4j", version.ref = "prometheus" }
+
+kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin" }
+
+[plugins]
+publish-plugin = { id = "io.github.gradle-nexus.publish-plugin", version = "2.0.0" }
+dependencycheck = { id = "org.owasp.dependencycheck", version = "10.0.4" }
+gradle-git-properties = { id = "com.gorylenko.gradle-git-properties", version = "2.4.2" }
+dependency-license-report = { id = "com.github.jk1.dependency-license-report", version = "2.9" }
+download = { id = "de.undercouch.download", version = "5.6.0" }
