@@ -1,5 +1,5 @@
 [versions]
-kotlin = "1.8.22"
+kotlin = "2.0.21"
 protobuf = "3.25.5" # gRPC 1.66 libraries uses protobuf 3.+
 prometheus = "0.16.0"
 
