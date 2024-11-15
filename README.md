@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.8.0)
+# TH2 'Bill of Materials' (BOM) project (4.9.0)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -65,6 +65,15 @@ So you can declare that you need any BOM with certain major and minor versions, 
 In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
+
+## 4.9.0
+
+### Updated
+* grpc-bom 1.66.0 -> 1.68.1
+* jackson-bom 2.17.2 -> 2.18.1
+* netty-bom 4.1.113.Final -> 4.1.115.Final
+* guava 33.3.0-jre -> 33.3.1-jre
+* log4j-bom 2.24.0 -> 2.24.1
 
 ## 4.8.0
 
