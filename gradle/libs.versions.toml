@@ -7,7 +7,7 @@ prometheus = "0.16.0"
 slf4j-bom = { group = "org.slf4j", name = "slf4j-bom", version = "2.0.16" }
 log4j-bom = { group = "org.apache.logging.log4j", name = "log4j-bom", version = "2.24.3" }
 
-netty-bom = { group = "io.netty", name = "netty-bom", version = "4.1.116.Final" }
+netty-bom = { group = "io.netty", name = "netty-bom", version = "4.1.117.Final" }
 jackson-bom = { group = "com.fasterxml.jackson", name = "jackson-bom", version = "2.18.2" }
 java-driver-bom = { group = "com.datastax.oss", name = "java-driver-bom", version = "4.17.0" }
 
