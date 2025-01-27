@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.9.0)
+# TH2 'Bill of Materials' (BOM) project (4.10.0)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -65,6 +65,21 @@ So you can declare that you need any BOM with certain major and minor versions, 
 In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
+
+## 4.10.0
+
+### Updated
+* amqp-client 5.22.0 -> 5.24.0
+* grpc-bom 1.68.1 -> 1.70.0
+* netty-bom 4.1.115.Final -> 4.1.117.Final
+* jackson-bom 2.18.1 -> 2.18.2
+* commons-text commons-text 1.12.0 -> 1.13.0
+* commons-io 2.17.0 -> 2.18.0
+* guava 33.3.1-jre -> 33.4.0-jre
+* log4j-bom 2.24.1 -> 2.24.3
+
+### Updated plugins
+* owasp 11.1.0 -> 12.0.1
 
 ## 4.9.0
 
