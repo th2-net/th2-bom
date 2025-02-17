@@ -34,7 +34,7 @@ kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref 
 
 [plugins]
 publish-plugin = { id = "io.github.gradle-nexus.publish-plugin", version = "2.0.0" }
-dependencycheck = { id = "org.owasp.dependencycheck", version = "12.0.2" }
+dependencycheck = { id = "org.owasp.dependencycheck", version = "12.1.0" }
 gradle-git-properties = { id = "com.gorylenko.gradle-git-properties", version = "2.4.2" }
 dependency-license-report = { id = "com.github.jk1.dependency-license-report", version = "2.9" }
 download = { id = "de.undercouch.download", version = "5.6.0" }
