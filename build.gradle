@@ -34,12 +34,20 @@ dependencyCheck {
     nvd {
         apiKey = project.findProperty("nvdApiKey") as String
         delay = Integer.valueOf(project.findProperty("nvdDelay") as String)
+        datafeedUrl = project.findProperty("nvdDatafeedUrl") as String
+        datafeedUser = project.findProperty("nvdDatafeedUser") as String
+        datafeedPassword = project.findProperty("nvdDatafeedPassword") as String
     }
 
     analyzers {
         assemblyEnabled = false
         nugetconfEnabled = false
         nodeEnabled = false
+        kev {
+            url = project.findProperty("analyzersKnownExploitedURL") as String
+            user = project.findProperty("analyzersKnownExploitedUser") as String
+            password = project.findProperty("analyzersKnownExploitedPassword") as String
+        }
     }
 }
 
