@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.10.0)
+# TH2 'Bill of Materials' (BOM) project (4.11.0)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -65,6 +65,16 @@ So you can declare that you need any BOM with certain major and minor versions, 
 In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
+
+## 4.11.0
+
+### Updated
+* slf4j-bom 2.0.16 -> 2.0.17
+* netty-bom 4.1.117.Final -> 4.1.119.Final
+* amqp-client 5.24.0 -> 5.25.0
+
+### Updated plugins
+* owasp 12.0.1 -> 12.1.0
 
 ## 4.10.0
 
