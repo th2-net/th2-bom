@@ -18,7 +18,7 @@ commons-lang3 = { group = "org.apache.commons", name = "commons-lang3", version 
 commons-io = { group = "commons-io", name = "commons-io", version = "2.18.0" }
 commons-cli = { group = "commons-cli", name = "commons-cli", version = "1.9.0" }
 commons-collections4 = { group = "org.apache.commons", name = "commons-collections4", version = "4.4" }
-guava = { group = "com.google.guava", name = "guava", version = "33.4.0-jre" }
+guava = { group = "com.google.guava", name = "guava", version = "33.4.5-jre" }
 
 grpc-bom = { group = "io.grpc", name = "grpc-bom", version = "1.71.0" }
 protobuf-java-util = { group = "com.google.protobuf", name = "protobuf-java-util", version.ref = "protobuf" }
