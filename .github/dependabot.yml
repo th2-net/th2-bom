@@ -16,6 +16,10 @@ updates:
       - dependency-name: com.google.protobuf:protoc
         update-types:
           - version-update:semver-major
+      - dependency-name: org.jetbrains.kotlin:kotlin-bom
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
   - package-ecosystem: github-actions
     directory: /
     reviewers:
