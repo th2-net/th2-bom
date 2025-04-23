@@ -2,7 +2,7 @@ version: 2
 updates:
   - package-ecosystem: gradle
     directory: /
-    reviewers: ${{ env.DEPENDABOT_REVIEWERS }}
+    reviewers: ${{ fromJson(env.DEPENDABOT_REVIEWERS) }}
     labels:
       - dependencies
     schedule:
@@ -20,7 +20,7 @@ updates:
           - version-update:semver-minor
   - package-ecosystem: github-actions
     directory: /
-    reviewers: ${{ env.DEPENDABOT_REVIEWERS }}
+    reviewers: ${{ fromJson(env.DEPENDABOT_REVIEWERS) }}
     labels:
       - dependencies
     schedule:
