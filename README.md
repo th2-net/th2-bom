@@ -66,6 +66,18 @@ In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
 
+## 4.12.0
+
+### Updated
+* protobuf 3.25.5 -> 3.25.8
+* netty-bom 4.1.119.Final -> 4.2.1.Final
+* jackson-bom 2.18.2 -> 2.19.0
+* jetbrains 24.1.0 -> 26.0.2
+* commons-text 1.13.0 -> 1.13.1
+* commons-io -> 2.18.0 -> 2.19.0
+* commons-collections4 4.4 -> 4.5.0
+* grpc-bom 1.70.0 -> 1.73.0
+
 ## 4.11.0
 
 ### Updated
