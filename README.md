@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.11.0)
+# TH2 'Bill of Materials' (BOM) project (4.13.0)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -65,6 +65,15 @@ So you can declare that you need any BOM with certain major and minor versions, 
 In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
+
+## 4.13.0
+
+### Updated
+* log4j-bom 2.24.3 -> 2.25.1
+* netty-bom 4.2.1.Final -> 4.2.3.Final
+* jackson-bom 2.19.0 -> 2.19.1
+* commons-lang3 3.17.0 -> 3.18.0
+* commons-io 2.19.0 -> 2.20.0
 
 ## 4.12.0
 
