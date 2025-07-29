@@ -71,9 +71,12 @@ In most cases it is not necessary, but it might be useful sometimes.
 ### Updated
 * log4j-bom 2.24.3 -> 2.25.1
 * netty-bom 4.2.1.Final -> 4.2.3.Final
-* jackson-bom 2.19.0 -> 2.19.1
+* jackson-bom 2.19.0 -> 2.19.2
+* amqp-client 5.25.0 -> 5.26.0
+* commons-text 1.13.1 -> 1.14.0
 * commons-lang3 3.17.0 -> 3.18.0
 * commons-io 2.19.0 -> 2.20.0
+* grpc-bom 1.73.0 -> 1.74.0
 
 ## 4.12.0
 
