@@ -8,19 +8,19 @@ slf4j-bom = { group = "org.slf4j", name = "slf4j-bom", version = "2.0.17" }
 log4j-bom = { group = "org.apache.logging.log4j", name = "log4j-bom", version = "2.25.1" }
 
 netty-bom = { group = "io.netty", name = "netty-bom", version = "4.2.3.Final" }
-jackson-bom = { group = "com.fasterxml.jackson", name = "jackson-bom", version = "2.19.1" }
+jackson-bom = { group = "com.fasterxml.jackson", name = "jackson-bom", version = "2.19.2" }
 java-driver-bom = { group = "com.datastax.oss", name = "java-driver-bom", version = "4.17.0" }
 
-amqp-client = { group = "com.rabbitmq", name = "amqp-client", version = "5.25.0" }
+amqp-client = { group = "com.rabbitmq", name = "amqp-client", version = "5.26.0" }
 annotations = { group = "org.jetbrains", name = "annotations", version = "26.0.2" }
-commons-text = { group = "org.apache.commons", name = "commons-text", version = "1.13.1" }
+commons-text = { group = "org.apache.commons", name = "commons-text", version = "1.14.0" }
 commons-lang3 = { group = "org.apache.commons", name = "commons-lang3", version = "3.18.0" }
 commons-io = { group = "commons-io", name = "commons-io", version = "2.20.0" }
 commons-cli = { group = "commons-cli", name = "commons-cli", version = "1.9.0" }
 commons-collections4 = { group = "org.apache.commons", name = "commons-collections4", version = "4.5.0" }
 guava = { group = "com.google.guava", name = "guava", version = "33.4.8-jre" }
 
-grpc-bom = { group = "io.grpc", name = "grpc-bom", version = "1.73.0" }
+grpc-bom = { group = "io.grpc", name = "grpc-bom", version = "1.74.0" }
 protobuf-java-util = { group = "com.google.protobuf", name = "protobuf-java-util", version.ref = "protobuf" }
 protoc = { group = "com.google.protobuf", name = "protoc", version.ref = "protobuf" }
 
