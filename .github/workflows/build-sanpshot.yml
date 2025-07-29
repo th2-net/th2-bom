@@ -11,8 +11,8 @@ jobs:
     with:
       build-target: 'Sonatype'
     secrets:
-      sonatypeUsername: ${{ secrets.CENTRAL_SONATYPE_COM_USERNAME }}
-      sonatypePassword: ${{ secrets.CENTRAL_SONATYPE_COM_PASSWORD }}
+      sonatypeUsername: ${{ secrets.SONATYPE_NEXUS_USERNAME }}
+      sonatypePassword: ${{ secrets.SONATYPE_NEXUS_PASSWORD }}
       sonatypeSigningKey: ${{ secrets.SONATYPE_GPG_ARMORED_KEY }}
       sonatypeSigningPassword: ${{ secrets.SONATYPE_SIGNING_PASSWORD }}
       nvd-api-key: ${{ secrets.NVD_APIKEY }}
