@@ -11,7 +11,7 @@ netty-bom = { group = "io.netty", name = "netty-bom", version = "4.2.3.Final" }
 jackson-bom = { group = "com.fasterxml.jackson", name = "jackson-bom", version = "2.19.2" }
 java-driver-bom = { group = "com.datastax.oss", name = "java-driver-bom", version = "4.17.0" }
 
-amqp-client = { group = "com.rabbitmq", name = "amqp-client", version = "5.25.0" }
+amqp-client = { group = "com.rabbitmq", name = "amqp-client", version = "5.26.0" }
 annotations = { group = "org.jetbrains", name = "annotations", version = "26.0.2" }
 commons-text = { group = "org.apache.commons", name = "commons-text", version = "1.14.0" }
 commons-lang3 = { group = "org.apache.commons", name = "commons-lang3", version = "3.18.0" }
