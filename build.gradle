@@ -85,6 +85,10 @@ dependencies {
         api(libs.simpleclient.httpserver)
         api(libs.simpleclient.log4j2)
         api(libs.simpleclient.log4j)
+
+        api(libs.gson) {
+            because("the 2.8.9 version has CVE-2025-53864 vulnerability")
+        }
     }
 }
 
