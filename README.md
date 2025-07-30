@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.13.0)
+# TH2 'Bill of Materials' (BOM) project (4.13.1)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -65,6 +65,12 @@ So you can declare that you need any BOM with certain major and minor versions, 
 In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
+
+## 4.13.1
+
+### Updated
+* gson 2.8.9 -> 2.13.1<br>
+  because the 2.8.9 version has CVE-2025-53864 vulnerability
 
 ## 4.13.0
 
