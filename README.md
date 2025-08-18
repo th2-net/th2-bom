@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.13.1)
+# TH2 'Bill of Materials' (BOM) project (4.13.2)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -65,6 +65,14 @@ So you can declare that you need any BOM with certain major and minor versions, 
 In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
+
+## 4.13.2
+
+### Updated
+
+* netty 4.2.3.Final (CVE-2025-55163) -> 4.2.4.Final
+* commons-cli 1.9.0 -> 1.10.0
+
 
 ## 4.13.1
 
