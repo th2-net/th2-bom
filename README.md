@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.13.2)
+# TH2 'Bill of Materials' (BOM) project (4.14.0)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -65,6 +65,15 @@ So you can declare that you need any BOM with certain major and minor versions, 
 In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
+
+## 4.14.0
+
+### Updated
+
+* kotlin 1.8.22 -> 2.2.10
+* netty 4.2.4.Final -> 4.2.5.Final
+* annotations 26.0.2 -> 26.0.2-1
+* grpc 1.74.0 -> 1.75.0
 
 ## 4.13.2
 
