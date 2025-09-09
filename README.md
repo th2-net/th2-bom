@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.14.0)
+# TH2 'Bill of Materials' (BOM) project (4.14.1)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -67,6 +67,10 @@ In most cases it is not necessary, but it might be useful sometimes.
 # Release notes:
 
 ## 4.14.0
+
+### Roll back
+
+* kotlin 2.2.10 -> 1.8.22
 
 ### Updated
 
