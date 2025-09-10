@@ -11,6 +11,10 @@ updates:
         update-types:
           - version-update:semver-major
           - version-update:semver-minor
+      - dependency-name: org.jetbrains.kotlin:kotlin-bom
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
       - dependency-name: com.google.protobuf:protobuf-java-util
         update-types:
           - version-update:semver-major
