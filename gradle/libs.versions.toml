@@ -21,7 +21,7 @@ commons-collections4 = { group = "org.apache.commons", name = "commons-collectio
 guava = { group = "com.google.guava", name = "guava", version = "33.5.0-jre" }
 gson = { group = "com.google.code.gson", name = "gson", version = "2.13.2" }
 
-grpc-bom = { group = "io.grpc", name = "grpc-bom", version = "1.75.0" }
+grpc-bom = { group = "io.grpc", name = "grpc-bom", version = "1.76.0" }
 protobuf-java-util = { group = "com.google.protobuf", name = "protobuf-java-util", version.ref = "protobuf" }
 protoc = { group = "com.google.protobuf", name = "protoc", version.ref = "protobuf" }
 
