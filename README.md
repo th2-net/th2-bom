@@ -1,4 +1,4 @@
-# TH2 'Bill of Materials' (BOM) project (4.14.1)
+# TH2 'Bill of Materials' (BOM) project (4.14.2)
 
 This project contains the list of dependencies with their respective versions that are compatible and can be used with each other.
 
@@ -65,6 +65,24 @@ So you can declare that you need any BOM with certain major and minor versions, 
 In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
+
+## 4.14.2
+
+### Updated
+
+* log4j-bom 2.25.1 -> 2.25.2
+* netty-bom 4.2.6.Final -> 4.2.7.Final
+* amqp-client 5.26.0 -> 5.27.0
+* commons-lang3 3.18.0 -> 3.19.0
+* guava 33.4.8-jre -> 33.5.0-jre
+* gson 2.13.1 -> 2.13.2
+* grpc-bom 1.75.0 -> 1.76.0
+
+## 4.14.1
+
+### Roll back
+
+* kotlin 2.2.10 -> 1.8.22
 
 ## 4.14.0
 
