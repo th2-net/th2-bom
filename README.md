@@ -66,6 +66,20 @@ In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
 
+## 4.14.3
+
+### Updated
+
+* netty-bom: `4.2.9.Final`
+* jackson-bom: `2.20.1`
+* amqp-client: `5.28.0`
+* commons-text: `1.15.0`
+* commons-lang3: `3.20.0`
+* commons-io: `2.21.0`
+* commons-cli: `1.11.0`
+* grpc-bom: `1.77.0`
+* log4j-bom: `2.25.3`
+
 ## 4.14.2
 
 ### Updated
