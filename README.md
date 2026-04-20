@@ -66,6 +66,17 @@ In most cases it is not necessary, but it might be useful sometimes.
 
 # Release notes:
 
+## 4.14.4
+
+### Updated
+
+* protobuf: `3.25.9`
+* netty-bom: `4.2.12.Final`
+* jackson-bom: `2.21.2`
+* amqp-client: `5.29.0`
+* annotations: `26.1.0`
+* grpc-bom: `1.80.0`
+
 ## 4.14.3
 
 ### Updated
